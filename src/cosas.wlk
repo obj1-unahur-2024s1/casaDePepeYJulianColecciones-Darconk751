@@ -31,3 +31,61 @@ object plancha {
 	method esComida() { return false }
 	method esElectrodomestico() { return true }	
 }
+
+object kiloDeMilanesas {
+	method precio() = 2600
+	method esComida() = true
+	method esElectrodomestico() = false
+}
+
+object botellaDeSalsaDeTomate {
+	method precio() = 900
+	method esComida() = true
+	method esElectrodomestico() = false
+}
+
+object microondas {
+	method precio() = 42000
+	method esComida() = false
+	method esElectrodomestico() = true
+}
+
+object kiloDeCebollas {
+	method precio() = 250
+	method esComida() = true
+	method esElectrodomestico() = false
+}
+
+object computadora {
+	method precioEndolares() = 500
+	method precio() = dolar.precioDeVenta() * self.precioEndolares() 
+	method esComida() = false
+	method esElectrodomestico() = false
+}
+
+object dolar {
+	method precioDeVenta(){
+		return 890
+	}
+}
+
+object packDeComida {
+	var plato = paqueteDeFideos
+	var aderezo = botellaDeSalsaDeTomate
+	method plato() = plato
+	method cambiarPlato(platoNuevo){
+		plato = platoNuevo
+	}
+	method aderezo() = aderezo
+	method cambiarAderezo(aderezoNuevo){
+		aderezo = aderezoNuevo
+	}
+	method precio() = plato.precio() + aderezo.precio()
+	method esComida() = true
+	method esElectrodomestico() = false
+}
+
+
+
+
+
